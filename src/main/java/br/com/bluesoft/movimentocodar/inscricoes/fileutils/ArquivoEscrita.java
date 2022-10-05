@@ -19,8 +19,10 @@ public class ArquivoEscrita {
     public ArquivoEscrita(Path filePath) throws IOException {
         arquivoFisico = filePath.toFile();
         if (!arquivoFisico.exists()) {
-            arquivoFisico.mkdirs();
-            arquivoFisico.createNewFile();
+            if(!arquivoFisico.isDirectory()) {
+                arquivoFisico.getParentFile().mkdirs();
+                arquivoFisico.createNewFile();
+            }
         }
     }
 

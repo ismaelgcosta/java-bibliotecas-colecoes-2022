@@ -33,6 +33,7 @@ public class MenuExecutor {
 
         if(opcao != null) {
             opcao.executar();
+            execute();
         }
     }
 }

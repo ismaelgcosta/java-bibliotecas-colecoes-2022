@@ -2,6 +2,7 @@ package br.com.bluesoft.movimentocodar.inscricoes.menus.principal;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 import br.com.bluesoft.movimentocodar.inscricoes.candidatura.Candidatura;
@@ -29,7 +30,10 @@ public class OpcaoCandidatarSe implements Opcao {
         List<String> respostas = new ArrayList<>();
         formulario
             .listarPerguntas()
-            .forEach(pergunta -> respostas.add(pergunta.split("\\|")[0] + "|" + realizarPergunta(pergunta)));
+            .forEach(pergunta -> {
+                String resposta = realizarPergunta(pergunta);
+                respostas.add(pergunta.split("\\|")[0] + "|" + resposta);
+            });
 
         Candidatura candidatura = new Candidatura(respostas);
         candidatura.realizarInscricao();

@@ -8,7 +8,6 @@ import br.com.bluesoft.movimentocodar.inscricoes.menus.principal.MenuPrincipal;
 public class App {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        new MenuExecutor(new MenuPrincipal(scanner), scanner).execute();
+        new MenuExecutor(new MenuPrincipal(new Scanner(System.in)), new Scanner(System.in)).execute();
     }
 }

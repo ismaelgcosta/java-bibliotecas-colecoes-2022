@@ -5,7 +5,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 import br.com.bluesoft.movimentocodar.inscricoes.menus.Menu;
+import br.com.bluesoft.movimentocodar.inscricoes.menus.MenuExecutor;
 import br.com.bluesoft.movimentocodar.inscricoes.menus.Opcao;
+import br.com.bluesoft.movimentocodar.inscricoes.menus.principal.MenuPrincipal;
 
 public class MenuRelatorios implements Menu {
 
@@ -21,7 +23,7 @@ public class MenuRelatorios implements Menu {
 
         opcoes.put("1", new OpcaoCandidatosPorIdade());
         opcoes.put("2", new OpcaoQtdCandidatosPorIdade());
-        opcoes.put("9", new OpcaoSair(scanner));
+        opcoes.put("9", new OpcaoSair(new MenuExecutor(new MenuPrincipal(scanner), scanner)));
 
         return opcoes;
     }

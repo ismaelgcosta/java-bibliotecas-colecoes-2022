@@ -2,3 +2,8 @@ P1|Qual o seu nome completo?
 P2|Qual seu e-mail?
 P3|Qual sua idade?
 P4|Qual seu whatsapp ou celular?
+P5|que horas você acorda
+P6|todo dia
+P7|outra
+P8|nova pergunta
+P9|otrja
